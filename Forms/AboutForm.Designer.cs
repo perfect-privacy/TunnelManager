@@ -31,13 +31,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.test = new System.Windows.Forms.LinkLabel();
+            this.link = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.test);
+            this.panel1.Controls.Add(this.link);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -52,7 +52,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Version 1.4";
+            this.label2.Text = "Version 1.5";
             // 
             // label1
             // 
@@ -63,21 +63,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Perfect-Privacy TunnelManager ";
             // 
-            // test
+            // link
             // 
-            this.test.AutoSize = true;
-            this.test.Location = new System.Drawing.Point(3, 56);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(163, 13);
-            this.test.TabIndex = 0;
-            this.test.TabStop = true;
-            this.test.Text = "https://www.perfect-privacy.com";
-            this.test.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.test.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.test_LinkClicked);
+            this.link.AutoSize = true;
+            this.link.Location = new System.Drawing.Point(3, 56);
+            this.link.Name = "test";
+            this.link.Size = new System.Drawing.Size(163, 13);
+            this.link.TabIndex = 0;
+            this.link.TabStop = true;
+            this.link.Text = "https://www.perfect-privacy.com";
+            this.link.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.test_LinkClicked);
 
             System.Windows.Forms.LinkLabel.Link link = new System.Windows.Forms.LinkLabel.Link();
             link.LinkData = "https://www.perfect-privacy.com";
-            this.test.Links.Add(link);
+            this.link.Links.Add(link);
 
             // 
             // AboutForm
@@ -99,7 +99,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel test;
+        private System.Windows.Forms.LinkLabel link;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
 
