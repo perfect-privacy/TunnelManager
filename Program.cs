@@ -194,7 +194,7 @@ namespace PerfectPrivacy.PPTunnelManager
             }
             // kill old pplink instances that my block the tunnel
             killpplink();
-             
+              
             string osVer = System.Environment.OSVersion.Version.ToString();
             if (osVer.StartsWith("5")) // windows 2000, xp win2k3
             {
