@@ -169,7 +169,8 @@ namespace PerfectPrivacy.PPTunnelManager
         }
 
 
-        public static void killPlink() {
+        public static void killpplink()
+        {
             Process[] processes = Process.GetProcessesByName("pplink");
 
             foreach (Process process in processes)
@@ -192,8 +193,8 @@ namespace PerfectPrivacy.PPTunnelManager
                 return;
             }
             // kill old pplink instances that my block the tunnel
-            //killPlink();
-
+            killpplink();
+             
             string osVer = System.Environment.OSVersion.Version.ToString();
             if (osVer.StartsWith("5")) // windows 2000, xp win2k3
             {
