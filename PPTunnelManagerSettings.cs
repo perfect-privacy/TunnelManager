@@ -44,7 +44,7 @@ namespace PerfectPrivacy.PPTunnelManager
         private PPTunnelManagerSettings()
         {
         
-                string obviousPlinkPath = Path.Combine(Directory.GetCurrentDirectory(), "plink.exe");
+                string obviousPlinkPath = Path.Combine(Directory.GetCurrentDirectory(), "pplink.exe");
                 if (File.Exists(obviousPlinkPath))
                     this.PlinkLocation = obviousPlinkPath;
         }
@@ -53,7 +53,7 @@ namespace PerfectPrivacy.PPTunnelManager
         {
             get
             {
-                return Path.Combine(Directory.GetCurrentDirectory(), "plink.exe"); 
+                return Path.Combine(Directory.GetCurrentDirectory(), "pplink.exe"); 
               
             }
             set

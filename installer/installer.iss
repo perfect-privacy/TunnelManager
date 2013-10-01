@@ -33,7 +33,7 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 
 [Files]
 Source: "..\bin\Release\PP-TunnelManager.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\plink.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\pplink.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

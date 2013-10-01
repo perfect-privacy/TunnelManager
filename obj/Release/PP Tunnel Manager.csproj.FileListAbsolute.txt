@@ -15,3 +15,18 @@ Z:\pp\collab\vadmin\sshclient\PP_Manager_topublish\obj\Release\PP-TunnelManager.
 Z:\pp\collab\vadmin\sshclient\PP_TunnelManager\bin\Release\PP-TunnelManager.exe.config
 Z:\pp\collab\vadmin\sshclient\PP_TunnelManager\obj\Release\PP-TunnelManager.exe
 Z:\pp\collab\vadmin\sshclient\PP_TunnelManager\obj\Release\PP-TunnelManager.pdb
+Z:\pp\collab\vadmin\sshclient\TunnelManager\bin\Release\PP-TunnelManager.exe.config
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PP-TunnelManager.exe
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PP-TunnelManager.pdb
+Z:\pp\collab\vadmin\sshclient\TunnelManager\bin\Release\PP-TunnelManager.exe
+Z:\pp\collab\vadmin\sshclient\TunnelManager\bin\Release\PP-TunnelManager.pdb
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PP Tunnel Manager.csprojResolveAssemblyReference.cache
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PerfectPrivacy.PPTunnelManager.Forms.AboutForm.resources
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PerfectPrivacy.PPTunnelManager.Forms.AddConnectionForm.resources
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PerfectPrivacy.PPTunnelManager.Forms.AddTunnelForm.resources
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PerfectPrivacy.PPTunnelManager.Forms.LoginForm.resources
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PerfectPrivacy.PPTunnelManager.Properties.Resources.resources
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PerfectPrivacy.PPTunnelManager.Forms.TipForm.resources
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PerfectPrivacy.PPTunnelManager.Forms.TrayIcon.resources
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PerfectPrivacy.PPTunnelManager.Forms.SettingsForm.resources
+Z:\pp\collab\vadmin\sshclient\TunnelManager\obj\Release\PP Tunnel Manager.csproj.GenerateResource.Cache

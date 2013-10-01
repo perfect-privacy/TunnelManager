@@ -933,7 +933,7 @@ namespace PerfectPrivacy.PPTunnelManager.Forms
                 }
                 catch (PlinkNotFoundException)
                 {
-                    MessageBox.Show("Could not find plink.exe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Could not find pplink.exe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             System.Threading.Thread.Sleep(500);

@@ -39,15 +39,7 @@ namespace PerfectPrivacy.PPTunnelManager.Forms
         public TrayIcon()
         {
             InitializeComponent();
-
-            // If plink.exe is not found, show the settings.
             this.settingsForm = new SettingsForm();
-            //if (!PPTunnelManagerSettings.Instance().HasPlink)
-           // {
-            //    this.notifyIcon.ShowBalloonTip(5, Application.ProductName, "Could not find plink.exe. Please locate it via the settings window.", ToolTipIcon.Info);
-             //   settingsForm.ShowDialog();
-           // }
-
             this.tipForm = new TipForm();
             this.aboutForm = new AboutForm();
         }
@@ -106,7 +98,7 @@ namespace PerfectPrivacy.PPTunnelManager.Forms
                 }
                 catch (PlinkNotFoundException)
                 {
-                    MessageBox.Show("Could not find plink.exe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Could not find pplink.exe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 using PerfectPrivacy.PPTunnelManager.Forms;
 using Microsoft.Win32;
-
+using System.Diagnostics;
 namespace PerfectPrivacy.PPTunnelManager
 {
     static class Program
@@ -168,6 +168,15 @@ namespace PerfectPrivacy.PPTunnelManager
         
         }
 
+
+        public static void killPlink() {
+            Process[] processes = Process.GetProcessesByName("pplink");
+
+            foreach (Process process in processes)
+            {
+                process.Kill();
+            }
+        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -182,11 +191,15 @@ namespace PerfectPrivacy.PPTunnelManager
                 MessageBox.Show("An instance of " + Application.ProductName + " is already running.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            // kill old pplink instances that my block the tunnel
+            //killPlink();
+
             string osVer = System.Environment.OSVersion.Version.ToString();
             if (osVer.StartsWith("5")) // windows 2000, xp win2k3
             {
                 isXP = true;
             }
+
 
             cleanReg();
             TrayIcon = new TrayIcon();
