@@ -33,7 +33,7 @@ public enum ConnectionType
     HTTP,
     FORWARDING
 }
-namespace PerfectPrivacy.PPTunnelManager
+namespace PerfectPrivacy.SSHManager
 {
     class Connection
     {

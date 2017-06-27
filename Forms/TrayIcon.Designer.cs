@@ -1,4 +1,4 @@
-﻿namespace PerfectPrivacy.PPTunnelManager.Forms
+﻿namespace PerfectPrivacy.SSHManager.Forms
 {
     partial class TrayIcon
     {
@@ -34,90 +34,72 @@
             this.menuTunnels = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSparatorOne = new System.Windows.Forms.ToolStripSeparator();
             this.menuSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSeparatorTwo = new System.Windows.Forms.ToolStripSeparator();
             this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip
             // 
+            resources.ApplyResources(this.contextMenuStrip, "contextMenuStrip");
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuTunnels,
+            //this.menuTunnels,
             this.menuSparatorOne,
             this.menuSettings,
             this.menuAbout,
             this.menuSeparatorTwo,
             this.menuExit});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(126, 82);
             this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.Menu_Opening);
             // 
             // menuTunnels
             // 
-            this.menuTunnels.Enabled = false;
+            resources.ApplyResources(this.menuTunnels, "menuTunnels");
             this.menuTunnels.Name = "menuTunnels";
-            this.menuTunnels.Size = new System.Drawing.Size(125, 22);
-            this.menuTunnels.Text = "Connections";
             // 
             // menuSparatorOne
             // 
+            resources.ApplyResources(this.menuSparatorOne, "menuSparatorOne");
             this.menuSparatorOne.Name = "menuSparatorOne";
-            this.menuSparatorOne.Size = new System.Drawing.Size(122, 6);
             // 
             // menuSettings
             // 
+            resources.ApplyResources(this.menuSettings, "menuSettings");
             this.menuSettings.Name = "menuSettings";
-            this.menuSettings.Size = new System.Drawing.Size(125, 22);
-            this.menuSettings.Text = "Settings";
             this.menuSettings.Click += new System.EventHandler(this.MenuSettings_Click);
-
+            // 
+            // menuAbout
+            // 
+            resources.ApplyResources(this.menuAbout, "menuAbout");
             this.menuAbout.Name = "menuAbout";
-            this.menuAbout.Size = new System.Drawing.Size(125, 22);
-            this.menuAbout.Text = "About";
             this.menuAbout.Click += new System.EventHandler(this.MenuAbout_Click);
             // 
             // menuSeparatorTwo
             // 
+            resources.ApplyResources(this.menuSeparatorTwo, "menuSeparatorTwo");
             this.menuSeparatorTwo.Name = "menuSeparatorTwo";
-            this.menuSeparatorTwo.Size = new System.Drawing.Size(122, 6);
             // 
             // menuExit
             // 
+            resources.ApplyResources(this.menuExit, "menuExit");
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(125, 22);
-            this.menuExit.Text = "Exit";
             this.menuExit.Click += new System.EventHandler(this.MenuExit_Click);
             // 
             // notifyIcon
             // 
+            resources.ApplyResources(this.notifyIcon, "notifyIcon");
             this.notifyIcon.ContextMenuStrip = this.contextMenuStrip;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "PP Tunnel Manager";
-            this.notifyIcon.Visible = true;
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseClick);
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
             // TrayIcon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 255);
-          //  this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            
-            if (Program.isXP == true)
-            {
-                
-                this.Icon = ((System.Drawing.Icon)(Properties.Resources.pp_icon_xp));
-            }
-            else {
-                this.Icon = ((System.Drawing.Icon)(Properties.Resources.pp_icon));
-            }
-            
+            this.Icon = global::PerfectPrivacy.SSHManager.Properties.Resources.pp_icon;
             this.Name = "TrayIcon";
-            this.Text = "Main";
-
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 

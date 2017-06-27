@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PerfectPrivacy.PPTunnelManager.Forms
+namespace PerfectPrivacy.SSHManager.Forms
 {
     public partial class TrayIcon : Form
     {
@@ -42,32 +42,28 @@ namespace PerfectPrivacy.PPTunnelManager.Forms
             this.settingsForm = new SettingsForm();
             this.tipForm = new TipForm();
             this.aboutForm = new AboutForm();
+            //this.showSettings();
         }
 
         public void UpdateConnections()
         {
-            this.menuTunnels.Enabled = false;
-
-            if (!PPTunnelManagerSettings.Instance().HasPlink)
+            if (!sshManagerSettings.Instance().HasPlink)
                 return;
             
-            this.menuTunnels.DropDownItems.Clear();
-
+            while (this.contextMenuStrip.Items[0].GetType() != typeof(ToolStripSeparator))
+            {
+                this.contextMenuStrip.Items.RemoveAt(0);
+            }
             foreach (Connection connection in Core.Instance().Connections)
             {
-              //  List<Tunnel> tunnels = connection.Tunnels;
+                ToolStripMenuItem connectionItem = new ToolStripMenuItem(connection.Name);
+                this.contextMenuStrip.Items.Insert(0, connectionItem);
+                  
+                connectionItem.Tag = connection;
+                connectionItem.Click += new EventHandler(MenuConnection_Click);
 
-               // if (tunnels.Count > 0)
-                //{
-                    this.menuTunnels.Enabled = true;
-
-                    ToolStripMenuItem connectionItem = (ToolStripMenuItem)this.menuTunnels.DropDownItems.Add(connection.Name);
-                    connectionItem.Tag = connection;
-                    connectionItem.Click += new EventHandler(MenuConnection_Click);
-
-                    if (connection.IsOpen)
-                        connectionItem.Checked = true;
-                //}
+                if (connection.IsOpen)
+                    connectionItem.Checked = true;
             }
         }
 
@@ -116,18 +112,25 @@ namespace PerfectPrivacy.PPTunnelManager.Forms
 
         private void MenuSettings_Click(object sender, EventArgs e)
         {
-            if (!this.settingsForm.Visible)
-                this.settingsForm.ShowDialog();
+            this.showSettings();
         }
 
         private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (!this.tipForm.Visible && Connection.OpenConnections.Count > 0)
+                if (this.settingsForm.Visible)
                 {
-                    this.tipForm.ShowDialog();
-                    this.tipForm.Focus();
+                    this.settingsForm.BringToFront();
+                    this.settingsForm.Focus();
+                    this.settingsForm.Activate();
+                }
+                else
+                {
+                    if (!this.tipForm.Visible && Connection.OpenConnections.Count > 0)
+                    {
+                        this.tipForm.ShowDialog();
+                    }
                 }
             }
         }
@@ -139,10 +142,27 @@ namespace PerfectPrivacy.PPTunnelManager.Forms
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
+            this.showSettings();
         }
 
- 
+        public void showSettings()
+        {
+
+            if (this.tipForm.Visible)
+            {
+                this.tipForm.Close();    
+            }
+
+            if (!this.settingsForm.Visible)
+            {
+                this.settingsForm.ShowDialog();
+            }
+            else { 
+                this.settingsForm.BringToFront();
+                this.settingsForm.Focus();
+                this.settingsForm.Activate();
+            }
+        }
 
         private void MenuAbout_Click(object sender, EventArgs e)
         {

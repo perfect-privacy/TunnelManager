@@ -27,10 +27,12 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Collections;
 using System.Collections.Generic;
-using PerfectPrivacy.PPTunnelManager.Forms;
+using PerfectPrivacy.SSHManager.Forms;
 
-namespace PerfectPrivacy.PPTunnelManager
+namespace PerfectPrivacy.SSHManager
 {
+    using PerfectPrivacy.SSHManager.Forms;
+
     class PuttyLink
     {
         private Connection connection;
@@ -53,7 +55,7 @@ namespace PerfectPrivacy.PPTunnelManager
         public void setup()
         {
             this.process = new Process();
-            this.process.StartInfo.FileName = PPTunnelManagerSettings.Instance().PlinkLocation;
+            this.process.StartInfo.FileName = sshManagerSettings.Instance().PlinkLocation;
 
             this.debuglog.AppendLine(this.process.StartInfo.FileName);
             this.process.StartInfo.CreateNoWindow = true;
@@ -97,7 +99,7 @@ namespace PerfectPrivacy.PPTunnelManager
         }
         public bool Start(bool interactive)
         {
-            if (!PPTunnelManagerSettings.Instance().HasPlink)
+            if (!sshManagerSettings.Instance().HasPlink)
             {
                 throw new PlinkNotFoundException();
             }
@@ -340,7 +342,7 @@ namespace PerfectPrivacy.PPTunnelManager
                     }
                     else
                     {
-                        if (stoptime - starttime < 20)
+                        if (stoptime - starttime < 20 && this.shouldbeactive == true)
                         {
                             if (Program.isXP == true)
                             {

@@ -1,4 +1,4 @@
-﻿namespace PerfectPrivacy.PPTunnelManager.Forms
+﻿namespace PerfectPrivacy.SSHManager.Forms
 {
     partial class TipForm
     {
@@ -33,16 +33,13 @@
             // 
             // TipForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(150, 74);
             this.ControlBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TipForm";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.TopMost = true;
             this.Deactivate += new System.EventHandler(this.TipForm_Deactivate);
             this.Shown += new System.EventHandler(this.TipForm_Shown);

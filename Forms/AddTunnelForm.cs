@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PerfectPrivacy.PPTunnelManager.Forms
+namespace PerfectPrivacy.SSHManager.Forms
 {
     public partial class AddTunnelForm : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace PerfectPrivacy.PPTunnelManager.Forms
+﻿namespace PerfectPrivacy.SSHManager.Forms
 {
     partial class AddTunnelForm
     {
@@ -28,116 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTunnelForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelDestinationPort = new System.Windows.Forms.Label();
+            this.destinationPortTextBox = new System.Windows.Forms.TextBox();
             this.labelDestination = new System.Windows.Forms.Label();
             this.destinationTextBox = new System.Windows.Forms.TextBox();
             this.sourcePortTextBox = new System.Windows.Forms.TextBox();
             this.labelSourcePort = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOk = new System.Windows.Forms.Button();
-            this.destinationPortTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.labelDestinationPort);
             this.groupBox1.Controls.Add(this.destinationPortTextBox);
             this.groupBox1.Controls.Add(this.labelDestination);
             this.groupBox1.Controls.Add(this.destinationTextBox);
             this.groupBox1.Controls.Add(this.sourcePortTextBox);
             this.groupBox1.Controls.Add(this.labelSourcePort);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(437, 92);
-            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // labelDestinationPort
             // 
-            this.labelDestinationPort.AutoSize = true;
-            this.labelDestinationPort.Location = new System.Drawing.Point(6, 68);
+            resources.ApplyResources(this.labelDestinationPort, "labelDestinationPort");
             this.labelDestinationPort.Name = "labelDestinationPort";
-            this.labelDestinationPort.Size = new System.Drawing.Size(68, 13);
-            this.labelDestinationPort.TabIndex = 5;
-            this.labelDestinationPort.Text = "Remote port:";
+            // 
+            // destinationPortTextBox
+            // 
+            resources.ApplyResources(this.destinationPortTextBox, "destinationPortTextBox");
+            this.destinationPortTextBox.Name = "destinationPortTextBox";
+            this.destinationPortTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.destinationPortTextBox_Validating);
             // 
             // labelDestination
             // 
-            this.labelDestination.AutoSize = true;
-            this.labelDestination.Location = new System.Drawing.Point(6, 42);
+            resources.ApplyResources(this.labelDestination, "labelDestination");
             this.labelDestination.Name = "labelDestination";
-            this.labelDestination.Size = new System.Drawing.Size(70, 13);
-            this.labelDestination.TabIndex = 3;
-            this.labelDestination.Text = "Remote host:";
             // 
             // destinationTextBox
             // 
-            this.destinationTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.destinationTextBox.Location = new System.Drawing.Point(82, 39);
+            resources.ApplyResources(this.destinationTextBox, "destinationTextBox");
             this.destinationTextBox.Name = "destinationTextBox";
-            this.destinationTextBox.Size = new System.Drawing.Size(349, 20);
-            this.destinationTextBox.TabIndex = 1;
             // 
             // sourcePortTextBox
             // 
-            this.sourcePortTextBox.Location = new System.Drawing.Point(82, 13);
+            resources.ApplyResources(this.sourcePortTextBox, "sourcePortTextBox");
             this.sourcePortTextBox.Name = "sourcePortTextBox";
-            this.sourcePortTextBox.Size = new System.Drawing.Size(56, 20);
-            this.sourcePortTextBox.TabIndex = 0;
             this.sourcePortTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.sourcePortTextBox_Validating);
             // 
             // labelSourcePort
             // 
-            this.labelSourcePort.AutoSize = true;
-            this.labelSourcePort.Location = new System.Drawing.Point(6, 16);
+            resources.ApplyResources(this.labelSourcePort, "labelSourcePort");
             this.labelSourcePort.Name = "labelSourcePort";
-            this.labelSourcePort.Size = new System.Drawing.Size(57, 13);
-            this.labelSourcePort.TabIndex = 0;
-            this.labelSourcePort.Text = "Local port:";
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.CausesValidation = false;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(374, 110);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 26);
-            this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // buttonOk
             // 
-            this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOk.Location = new System.Drawing.Point(293, 110);
+            resources.ApplyResources(this.buttonOk, "buttonOk");
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 26);
-            this.buttonOk.TabIndex = 1;
-            this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
-            // 
-            // destinationPortTextBox
-            // 
-            this.destinationPortTextBox.Location = new System.Drawing.Point(82, 65);
-            this.destinationPortTextBox.Name = "destinationPortTextBox";
-            this.destinationPortTextBox.Size = new System.Drawing.Size(56, 20);
-            this.destinationPortTextBox.TabIndex = 2;
-            this.destinationPortTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.destinationPortTextBox_Validating);
             // 
             // AddTunnelForm
             // 
             this.AcceptButton = this.buttonOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(461, 146);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.groupBox1);
@@ -145,8 +113,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddTunnelForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Add port";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

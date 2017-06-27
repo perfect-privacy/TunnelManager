@@ -34,7 +34,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections;
 
-namespace PerfectPrivacy.PPTunnelManager
+namespace PerfectPrivacy.SSHManager
 {
 
     public class RequestManager
@@ -207,9 +207,9 @@ namespace PerfectPrivacy.PPTunnelManager
 
         public static Core Instance()
         {
-            if (Core.instance == null)
+            if (Core.instance == null) { 
                 Core.instance = new Core();
-       
+            }
             return Core.instance;
         }
 

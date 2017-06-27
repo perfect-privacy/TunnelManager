@@ -23,25 +23,25 @@
 using System.IO;
 using Microsoft.Win32;
 
-namespace PerfectPrivacy.PPTunnelManager
+namespace PerfectPrivacy.SSHManager
 {
-    class PPTunnelManagerSettings
+    class sshManagerSettings
     {
-        private static PPTunnelManagerSettings instance = null;
+        private static sshManagerSettings instance = null;
 
-        public static PPTunnelManagerSettings Instance()
+        public static sshManagerSettings Instance()
         {
-            if (PPTunnelManagerSettings.instance == null)
-                PPTunnelManagerSettings.instance = new PPTunnelManagerSettings();
+            if (sshManagerSettings.instance == null)
+                sshManagerSettings.instance = new sshManagerSettings();
              
-            return PPTunnelManagerSettings.instance;
+            return sshManagerSettings.instance;
         }
 
         public static string PTM_REGISTRY_KEYPATH_ROOT = PPSettings.PP_REGISTRY_KEYPATH_ROOT;
        
         public static string PTM_REGISTRY_KEY_PLINK_LOCATION = @"pplink";
 
-        private PPTunnelManagerSettings()
+        private sshManagerSettings()
         {
         
                 string obviousPlinkPath = Path.Combine(Directory.GetCurrentDirectory(), "pplink.exe");

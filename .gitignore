@@ -1,0 +1,12 @@
+bin/*
+installer/Output/*
+obj/*
+stylecop-results.xml
+StyleCop.Cache
+dupReport.xml
+TestResult.xml
+Setup/*Setup.exe
+thumbs.db
+spellcheck.res
+wordlist*.bin
+.vs

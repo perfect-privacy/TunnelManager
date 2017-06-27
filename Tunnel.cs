@@ -23,7 +23,7 @@
 using System;
 using System.Text;
 
-namespace PerfectPrivacy.PPTunnelManager
+namespace PerfectPrivacy.SSHManager
 {
     public enum TunnelType
     {

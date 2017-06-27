@@ -22,7 +22,7 @@
  */
 using System;
 
-namespace PerfectPrivacy.PPTunnelManager
+namespace PerfectPrivacy.SSHManager
 {
     class PlinkNotFoundException : Exception
     {

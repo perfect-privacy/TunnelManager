@@ -29,7 +29,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace PerfectPrivacy.PPTunnelManager
+namespace PerfectPrivacy.SSHManager
 {
     class FormUtils
     {

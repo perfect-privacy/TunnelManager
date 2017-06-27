@@ -8,11 +8,11 @@
     <ProjectGuid>{45EC6417-C87F-46FD-9E53-CC520B10B9CD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PerfectPrivacy.PPTunnelManager</RootNamespace>
-    <AssemblyName>PP-TunnelManager</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <RootNamespace>PerfectPrivacy.SSHManager</RootNamespace>
+    <AssemblyName>SSHManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>PerfectPrivacy.PPTunnelManager.Program</StartupObject>
+    <StartupObject>PerfectPrivacy.SSHManager.Program</StartupObject>
     <ApplicationIcon>pp_icon_xp.ico</ApplicationIcon>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ManifestCertificateThumbprint>CA0D67B3DE66E794975BA15A0B3C3DC8532923EC</ManifestCertificateThumbprint>
@@ -35,8 +35,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>8</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.7.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -49,15 +49,16 @@
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
@@ -70,6 +71,9 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Win32.TaskScheduler">
+      <HintPath>packages\TaskScheduler.2.3.0\lib\4\Microsoft.Win32.TaskScheduler.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -105,6 +109,11 @@
     </Compile>
     <Compile Include="Core.cs" />
     <Compile Include="FormUtils.cs" />
+    <Compile Include="lang\strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.resx</DependentUpon>
+    </Compile>
     <Compile Include="PlinkNotFoundException.cs" />
     <Compile Include="PortAlreadyInUseException.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -135,18 +144,42 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddConnectionForm.de.resx">
+      <DependentUpon>AddConnectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddConnectionForm.resx">
       <DependentUpon>AddConnectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddTunnelForm.de.resx">
+      <DependentUpon>AddTunnelForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddTunnelForm.resx">
       <DependentUpon>AddTunnelForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.de.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.de.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrayIcon.de.resx">
+      <DependentUpon>TrayIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lang\strings.de.resx" />
+    <EmbeddedResource Include="lang\strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,7 +202,7 @@
     <Compile Include="Connection.cs" />
     <Compile Include="PPSettings.cs" />
     <Compile Include="Tunnel.cs" />
-    <Compile Include="PPTunnelManagerSettings.cs" />
+    <Compile Include="sshManagerSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -205,6 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="PP Tunnel Manager_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Resources\pp.ico" />
@@ -227,12 +261,35 @@
     <None Include="Resources\pp_tray_yellow.ico" />
     <None Include="Resources\pp_tray_green.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="TaskScheduler">
+      <Guid>{E34CB9F1-C7F7-424C-BE29-027DCC09363A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <UsingTask AssemblyFile="C:\Program Files (x86)\StyleCop 4.7\StyleCop.dll" TaskName="StyleCopTask" />
+  <Target Name="AfterBuild">
+    <Message Text="Running StyleCop..." />
+    <CreateItem Include="%(Project.RootDir)%(Project.Directory)**\*.cs" Exclude="%(Project.RootDir)%(Project.Directory)**\*.Designer.cs">
+      <Output TaskParameter="Include" ItemName="StyleCopFiles" />
+    </CreateItem>
+    <StyleCopTask ProjectFullPath="$(MSBuildProjectFile)" SourceFiles="@(StyleCopFiles)" AdditionalAddinPaths="@(StyleCopAdditionalAddinPaths)" ForceFullAnalysis="true" DefineConstants="DEBUG TRACE CODE_ANALYSIS" TreatErrorsAsWarnings="true" CacheResults="false" OverrideSettingsFile="$(SolutionRoot)\Client\Settings.StyleCop" OutputFile="stylecop-results.xml" MaxViolationCount="20000">
+    </StyleCopTask>
+    <Message Text="StyleCop executed" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
+  
   -->
 </Project>

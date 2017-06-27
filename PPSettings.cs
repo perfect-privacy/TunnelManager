@@ -23,7 +23,7 @@
 using System;
 using Microsoft.Win32;
 
-namespace PerfectPrivacy.PPTunnelManager
+namespace PerfectPrivacy.SSHManager
 {
     class PPSettings
     {
